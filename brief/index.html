@@ -1,0 +1,256 @@
+<title>[S-STUDIO] — Weekly Brief</title>
+<style>
+  :root{
+    --ground:#9C9C9C;
+    --paper:#F4F4F3;
+    --ink:#0A0A0A;
+    --ink-2:#3D3D3D;
+    --rule:#0A0A0A;
+    --rule-soft:#C9C9C7;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --ground:#4A4A4A; --paper:#0A0A0A; --ink:#F4F4F3; --ink-2:#B5B5B3; --rule:#F4F4F3; --rule-soft:#3A3A3A; }
+  }
+  :root[data-theme="light"]{ --ground:#9C9C9C; --paper:#F4F4F3; --ink:#0A0A0A; --ink-2:#3D3D3D; --rule:#0A0A0A; --rule-soft:#C9C9C7; }
+  :root[data-theme="dark"]{ --ground:#4A4A4A; --paper:#0A0A0A; --ink:#F4F4F3; --ink-2:#B5B5B3; --rule:#F4F4F3; --rule-soft:#3A3A3A; }
+
+  body{margin:0;background:var(--ground);
+       font-family:"Helvetica Neue",Helvetica,"Noto Sans Thai",Arial,sans-serif;
+       -webkit-font-smoothing:antialiased;}
+  .sheet{max-width:820px;margin:48px auto;background:var(--paper);color:var(--ink);
+         padding:56px 56px 0;box-shadow:0 18px 60px rgba(0,0,0,.35);}
+  @media (max-width:640px){ .sheet{margin:0;padding:32px 20px 0;} }
+
+  /* masthead */
+  h1{font-size:clamp(44px,9.5vw,84px);font-weight:800;letter-spacing:-.035em;
+     line-height:.95;margin:0 0 8px;text-transform:uppercase;white-space:nowrap;}
+  .rule{border:0;border-top:2px solid var(--rule);margin:0;}
+  .rule-soft{border:0;border-top:1px solid var(--rule-soft);margin:0;}
+
+  /* meta row */
+  .meta{display:flex;flex-wrap:wrap;gap:6px 48px;padding:26px 0 30px;align-items:flex-start;}
+  .meta .col{font-size:12px;font-weight:700;line-height:1.5;text-transform:uppercase;}
+  .meta .col span{display:block;}
+  .meta .kind{margin-left:auto;font-size:clamp(26px,4.5vw,38px);font-weight:800;
+              letter-spacing:-.02em;line-height:1;}
+
+  /* section label */
+  .sec{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+       padding:10px 0 8px;color:var(--ink);}
+
+  /* line items */
+  table{width:100%;border-collapse:collapse;}
+  .items td{vertical-align:top;padding:9px 0 10px;font-size:12px;line-height:1.45;}
+  .items .name{font-weight:800;text-transform:uppercase;padding-right:16px;}
+  .items .name .sub{display:block;font-weight:400;color:var(--ink-2);padding-left:26px;
+                    text-transform:uppercase;font-size:11px;}
+  .items .n{width:26px;font-weight:400;color:var(--ink-2);}
+  .items .num{text-align:right;white-space:nowrap;font-weight:400;padding-left:18px;
+              font-variant-numeric:tabular-nums;}
+  .items .due{text-align:right;white-space:nowrap;font-weight:800;padding-left:18px;
+              font-variant-numeric:tabular-nums;width:64px;}
+  .items tr{border-bottom:0;}
+  .wide{overflow-x:auto;}
+  .wide table{min-width:560px;}
+
+  /* totals */
+  .totals{display:flex;justify-content:flex-end;padding:34px 0 40px;}
+  .totals table{width:auto;min-width:300px;}
+  .totals td{font-size:12px;font-weight:800;text-transform:uppercase;padding:2px 0;}
+  .totals td:last-child{text-align:right;font-variant-numeric:tabular-nums;padding-left:64px;}
+  .totals .big td{font-size:14px;padding-top:8px;}
+
+  /* verdict / payment block */
+  .pay{padding:22px 0 26px;}
+  .pay .head{display:flex;flex-wrap:wrap;gap:4px 28px;align-items:baseline;}
+  .pay .word{font-size:clamp(24px,4vw,34px);font-weight:800;letter-spacing:-.02em;text-transform:uppercase;}
+  .pay .ref{font-size:11px;font-weight:700;text-transform:uppercase;line-height:1.5;}
+  .pay .grid{display:flex;flex-wrap:wrap;gap:24px 56px;padding-top:18px;}
+  .pay .box{font-size:11px;font-weight:700;text-transform:uppercase;line-height:1.7;}
+  .pay .box .lite{font-weight:400;color:var(--ink-2);}
+  .repo{display:inline-block;margin-top:10px;background:var(--ink);color:var(--paper);
+        text-decoration:none;font-size:11px;font-weight:800;letter-spacing:.06em;
+        padding:14px 18px;text-transform:uppercase;}
+  .repo:focus-visible{outline:2px solid var(--ink);outline-offset:3px;}
+
+  /* terms */
+  .terms{columns:2;column-gap:32px;font-size:8.5px;line-height:1.55;color:var(--ink-2);
+         padding:14px 0 26px;text-transform:uppercase;}
+  @media (max-width:640px){ .terms{columns:1;} }
+  .terms b{color:var(--ink);}
+  .terms .th{text-transform:none;}
+
+  .arch{padding:14px 0;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;}
+  .arch a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;margin-left:18px;font-weight:700;}
+  .arch .cur{margin-left:18px;font-weight:700;border-bottom:2px solid var(--ink);}
+
+  /* footer strip */
+  .foot{display:flex;flex-wrap:wrap;gap:8px 40px;padding:12px 0 40px;
+        font-size:9px;font-weight:700;text-transform:uppercase;line-height:1.6;}
+  .foot span{display:block;}
+</style>
+
+<main class="sheet">
+  <h1>[S-STUDIO]</h1>
+  <hr class="rule">
+
+  <div class="meta">
+    <div class="col"><span>[14th July 2026]</span><span>[Sirawat Suphawatthanakul]</span></div>
+    <div class="col"><span>[#BRIEF-001 — Inaugural]</span><span>[The chair is the crossover: early bird D-9]</span></div>
+    <div class="kind">BRIEF</div>
+  </div>
+  <hr class="rule">
+
+  <p class="sec">Competitions</p>
+  <hr class="rule-soft">
+  <div class="wide">
+  <table class="items">
+    <tr>
+      <td class="n">01</td>
+      <td class="name">The Architect's Chair #5 — Buildner
+        <span class="sub">Furniture × architecture — both disciplines, one artifact</span>
+        <span class="sub">Boards only, no prototype — drawing carries the weight</span>
+        <span class="sub">Decide enter / pass before the 23rd</span>
+      </td>
+      <td class="num">★★★</td>
+      <td class="num">Tiered</td>
+      <td class="num">23 Jul 2026</td>
+      <td class="due">D-9</td>
+    </tr>
+    <tr>
+      <td class="n">02</td>
+      <td class="name">Prime Chair 12th — Industrial Design
+        <span class="sub">Pair with 01 — one concept, two entries</span>
+      </td>
+      <td class="num">★★★</td>
+      <td class="num">TBC</td>
+      <td class="num">28 Aug 2026*</td>
+      <td class="due">D-45</td>
+    </tr>
+    <tr>
+      <td class="n">03</td>
+      <td class="name">Andreu World Design Contest
+        <span class="sub">Strongest furniture credential on the list</span>
+      </td>
+      <td class="num">★★★</td>
+      <td class="num">Free*</td>
+      <td class="num">16 Sep 2026*</td>
+      <td class="due">D-64</td>
+    </tr>
+    <tr>
+      <td class="n">04</td>
+      <td class="name">Architecture for Children's Development #4
+        <span class="sub">Social program — low-stakes ideas practice</span>
+      </td>
+      <td class="num">★★</td>
+      <td class="num">Tiered</td>
+      <td class="num">27 Aug 2026*</td>
+      <td class="due">D-44</td>
+    </tr>
+    <tr>
+      <td class="n">05</td>
+      <td class="name">Steel Architectural Awards ASEAN
+        <span class="sub">Possible A49 professional entry — raise at the office</span>
+      </td>
+      <td class="num">★★</td>
+      <td class="num">TBD</td>
+      <td class="num">Open</td>
+      <td class="due">—</td>
+    </tr>
+    <tr>
+      <td class="n">06</td>
+      <td class="name">ASA Experimental 2027 Cycle
+        <span class="sub">2026 closed in April — prep a thread early this time</span>
+      </td>
+      <td class="num">★★★</td>
+      <td class="num">Free</td>
+      <td class="num">~Feb 2027</td>
+      <td class="due">Watch</td>
+    </tr>
+  </table>
+  </div>
+  <hr class="rule-soft">
+
+  <p class="sec">Study</p>
+  <hr class="rule-soft">
+  <div class="wide">
+  <table class="items">
+    <tr>
+      <td class="n">07</td>
+      <td class="name">WMS House — Vo Huu Linh Architects, VN
+        <span class="sub">Steal: section as concept — void + ventilation stack, not plan decoration</span>
+        <span class="sub">Same climate as Phuket, leaner budgets, braver sections</span>
+      </td>
+      <td class="num">Asia Awards '26</td>
+      <td class="due">Read</td>
+    </tr>
+    <tr>
+      <td class="n">08</td>
+      <td class="name">Five Tropical Houses — SEA Comparative
+        <span class="sub">Steal: build the matrix — shading / mass / cross-vent / water per house</span>
+      </td>
+      <td class="num">BluPrint</td>
+      <td class="due">Read</td>
+    </tr>
+    <tr>
+      <td class="n">09</td>
+      <td class="name">One Idea — The Chair as a 1:1 Sprint
+        <span class="sub">One motif from KRURUSAPA / EVERYHOME → five chair sketches this week</span>
+        <span class="sub">Furniture is architecture at 1:1 — the fastest tectonic test</span>
+      </td>
+      <td class="num">Do</td>
+      <td class="due">D-7</td>
+    </tr>
+  </table>
+  </div>
+
+  <div class="totals">
+    <table>
+      <tr><td>Open:</td><td>5</td></tr>
+      <tr><td>Watching:</td><td>2</td></tr>
+      <tr><td>Expired:</td><td>1</td></tr>
+      <tr><td>Verdicts pending:</td><td>9</td></tr>
+      <tr class="big"><td>Most urgent (ICT):</td><td>D-9</td></tr>
+    </table>
+  </div>
+
+  <hr class="rule">
+  <div class="pay">
+    <div class="head">
+      <span class="word">Verdict</span>
+      <span class="ref">[Brief no. 001]<br>[Ref: 2026-07-14]</span>
+    </div>
+    <div class="grid">
+      <div class="box">[Mark in repo]<br>
+        <span class="lite">🔥 Enter / act &nbsp;·&nbsp; 👍 Good pick &nbsp;·&nbsp; 👎 Miss — cut this thread</span><br>
+        <span class="lite">Marks feed the taste profile. Next brief reads them first.</span>
+      </div>
+      <div class="box">[Terms: verdicts before Wed 07:04]<br>
+        <a class="repo" href="https://github.com/SirawatSp/s-studio">github.com/sirawatsp/s-studio →</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule">
+  <div class="terms">
+    <b>Terms &amp; conditions:</b>
+    1. This brief covers competitions and study material scouted 14 Jul 2026 and does not include fees or production costs.
+    2. Deadlines marked * were seen only in search snippets and remain unverified until confirmed on the organiser's page; verify before paying any entry fee.
+    3. Expired competitions are never recommended; they are retained in the tracker as memory.
+    4. One argued pick per week; the radar lists the rest. Fit over firehose.
+    5. Verdicts (🔥/👍/👎) marked in the brief or spoken in session are folded into the taste profile in CLAUDE.md before the next scout; a 👎 must change something specific.
+    6. Deep dives are filed to library/ with parti, materiality, representation and what-to-steal; study notes to study/, cross-linked both ways.
+    7. Next scheduled issue: Wednesday 07:04 ICT, delivered by push notification.
+    8. By accepting this brief you agree to sketch at least once this week.
+    <span class="th"><b>สรุป:</b> เก้าอี้ Buildner คือจุดตัดของสองสายงานคุณพอดี ส่งแค่บอร์ด ปิด early bird 23 ก.ค. — ตัดสินใจภายในสัปดาห์นี้ แล้วอย่าลืมให้คะแนน 🔥/👍/👎 ในไฟล์ เพื่อให้ brief หน้าฉลาดขึ้น</span>
+  </div>
+
+  <nav class="arch">[Issues]<span class="cur">001 — 14 Jul 2026</span></nav>
+  <hr class="rule-soft">
+  <div class="foot">
+    <div><span>[S-Studio]</span><span>[Weekly — Wed 07:04 ICT]</span></div>
+    <div><span>[Phuket, TH]</span><span>[Tropical world]</span></div>
+    <div><span>[Sirawat × Claude]</span><span>[Est. 2026-07-14]</span></div>
+    <div><span>[github.com/sirawatsp/s-studio]</span><span>[Briefs / Tracker / Library / Study]</span></div>
+  </div>
+</main>
