@@ -42,6 +42,11 @@
   table{width:100%;border-collapse:collapse;}
   .items td{vertical-align:top;padding:9px 0 10px;font-size:12px;line-height:1.45;}
   .items .name{font-weight:800;text-transform:uppercase;padding-right:16px;}
+  .items .name a{color:inherit;text-decoration:underline;text-decoration-thickness:2px;
+                 text-underline-offset:3px;}
+  .items .name a::after{content:" ↗";font-weight:400;}
+  .items .name a:hover{background:var(--ink);color:var(--paper);text-decoration:none;}
+  .items .name a:focus-visible{outline:2px solid var(--ink);outline-offset:2px;}
   .items .name .sub{display:block;font-weight:400;color:var(--ink-2);padding-left:26px;
                     text-transform:uppercase;font-size:11px;}
   .items .n{width:26px;font-weight:400;color:var(--ink-2);}
@@ -68,7 +73,7 @@
   .pay .grid{display:flex;flex-wrap:wrap;gap:24px 56px;padding-top:18px;}
   .pay .box{font-size:11px;font-weight:700;text-transform:uppercase;line-height:1.7;}
   .pay .box .lite{font-weight:400;color:var(--ink-2);}
-  .repo{display:inline-block;margin-top:10px;background:var(--ink);color:var(--paper);
+  .repo{display:inline-block;margin-top:10px;margin-right:10px;background:var(--ink);color:var(--paper);
         text-decoration:none;font-size:11px;font-weight:800;letter-spacing:.06em;
         padding:14px 18px;text-transform:uppercase;}
   .repo:focus-visible{outline:2px solid var(--ink);outline-offset:3px;}
@@ -103,7 +108,7 @@
   <table class="items">
     <tr>
       <td class="n">01</td>
-      <td class="name">The Architect's Chair #5 — Buildner
+      <td class="name"><a href="https://architecturecompetitions.com/thearchitectschair5/" target="_blank" rel="noopener">The Architect's Chair #5 — Buildner</a>
         <span class="sub">Furniture × architecture — both disciplines, one artifact</span>
         <span class="sub">Boards only, no prototype — drawing carries the weight</span>
         <span class="sub">Decide enter / pass before the 23rd</span>
@@ -115,7 +120,7 @@
     </tr>
     <tr>
       <td class="n">02</td>
-      <td class="name">Prime Chair 12th — Industrial Design
+      <td class="name"><a href="https://www.designboom.com/competition/prime-chair-12th-international-industrial-design-competition/" target="_blank" rel="noopener">Prime Chair 12th — Industrial Design</a>
         <span class="sub">Pair with 01 — one concept, two entries</span>
       </td>
       <td class="num">★★★</td>
@@ -125,7 +130,7 @@
     </tr>
     <tr>
       <td class="n">03</td>
-      <td class="name">Andreu World Design Contest
+      <td class="name"><a href="https://andreuworld.com/en/talent/design-contest" target="_blank" rel="noopener">Andreu World Design Contest</a>
         <span class="sub">Strongest furniture credential on the list</span>
       </td>
       <td class="num">★★★</td>
@@ -135,17 +140,17 @@
     </tr>
     <tr>
       <td class="n">04</td>
-      <td class="name">Architecture for Children's Development #4
+      <td class="name"><a href="https://architecturecompetitions.com/kinderspace4/" target="_blank" rel="noopener">Kinderspace: Children's Development #4 — Buildner</a>
         <span class="sub">Social program — low-stakes ideas practice</span>
       </td>
       <td class="num">★★</td>
       <td class="num">Tiered</td>
-      <td class="num">27 Aug 2026*</td>
+      <td class="num">Adv 27 Aug · final 28 Oct 2026</td>
       <td class="due">D-44</td>
     </tr>
     <tr>
       <td class="n">05</td>
-      <td class="name">Steel Architectural Awards ASEAN
+      <td class="name"><a href="https://www.archdaily.com/1041131/steel-architectural-awards-asean-2026-open-for-entries-across-southeast-asia" target="_blank" rel="noopener">Steel Architectural Awards ASEAN</a>
         <span class="sub">Possible A49 professional entry — raise at the office</span>
       </td>
       <td class="num">★★</td>
@@ -155,7 +160,7 @@
     </tr>
     <tr>
       <td class="n">06</td>
-      <td class="name">ASA Experimental 2027 Cycle
+      <td class="name"><a href="https://www.asacompetition.com/" target="_blank" rel="noopener">ASA Experimental 2027 Cycle</a>
         <span class="sub">2026 closed in April — prep a thread early this time</span>
       </td>
       <td class="num">★★★</td>
@@ -173,7 +178,7 @@
   <table class="items">
     <tr>
       <td class="n">07</td>
-      <td class="name">WMS House — Vo Huu Linh Architects, VN
+      <td class="name"><a href="https://vhlarch.vn/" target="_blank" rel="noopener">WMS House — Vo Huu Linh Architects, VN</a>
         <span class="sub">Steal: section as concept — void + ventilation stack, not plan decoration</span>
         <span class="sub">Same climate as Phuket, leaner budgets, braver sections</span>
       </td>
@@ -182,7 +187,7 @@
     </tr>
     <tr>
       <td class="n">08</td>
-      <td class="name">Five Tropical Houses — SEA Comparative
+      <td class="name"><a href="https://bluprint-onemega.com/architecture/residential/tropical-houses-southeast-asia/" target="_blank" rel="noopener">Five Tropical Houses — SEA Comparative</a>
         <span class="sub">Steal: build the matrix — shading / mass / cross-vent / water per house</span>
       </td>
       <td class="num">BluPrint</td>
@@ -222,7 +227,8 @@
         <span class="lite">Marks feed the taste profile. Next brief reads them first.</span>
       </div>
       <div class="box">[Terms: verdicts before Wed 07:04]<br>
-        <a class="repo" href="https://github.com/SirawatSp/s-studio">github.com/sirawatsp/s-studio →</a>
+        <a class="repo" href="https://github.com/SirawatSp/s-studio/blob/main/briefs/2026/2026-07-14-inaugural.md" target="_blank" rel="noopener">Mark verdicts on this brief →</a>
+        <a class="repo" href="https://github.com/SirawatSp/s-studio" target="_blank" rel="noopener">Repo →</a>
       </div>
     </div>
   </div>
