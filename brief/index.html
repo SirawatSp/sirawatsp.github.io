@@ -1,22 +1,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="dark">
 <title>[S-STUDIO] — Weekly Brief</title>
 <style>
+  /* Single dark visual world — no theme switching, so nothing can collapse
+     to black-on-black. Dark grey sheet, explicit light ink. */
   :root{
-    color-scheme: light dark;
-    --ground:#9C9C9C;
-    --paper:#F4F4F3;
-    --ink:#0A0A0A;
-    --ink-2:#3D3D3D;
-    --rule:#0A0A0A;
-    --rule-soft:#C9C9C7;
+    color-scheme: dark;
+    --ground:#141414;   /* surround, darker than the sheet */
+    --paper:#2E2E2E;    /* the sheet itself — dark grey */
+    --ink:#F2F1EF;      /* primary text — 12.3:1 on the sheet */
+    --ink-2:#B5B5B3;    /* secondary text — 6.6:1 */
+    --rule:#F2F1EF;
+    --rule-soft:#565654;
   }
-  @media (prefers-color-scheme: dark){
-    :root{ --ground:#4A4A4A; --paper:#0A0A0A; --ink:#F4F4F3; --ink-2:#B5B5B3; --rule:#F4F4F3; --rule-soft:#3A3A3A; }
-  }
-  :root[data-theme="light"]{ --ground:#9C9C9C; --paper:#F4F4F3; --ink:#0A0A0A; --ink-2:#3D3D3D; --rule:#0A0A0A; --rule-soft:#C9C9C7; }
-  :root[data-theme="dark"]{ --ground:#4A4A4A; --paper:#0A0A0A; --ink:#F4F4F3; --ink-2:#B5B5B3; --rule:#F4F4F3; --rule-soft:#3A3A3A; }
 
   body{margin:0;background:var(--ground);
        font-family:"Helvetica Neue",Helvetica,"Noto Sans Thai",Arial,sans-serif;
@@ -46,7 +43,7 @@
   table{width:100%;border-collapse:collapse;}
   .items td{vertical-align:top;padding:9px 0 10px;font-size:12px;line-height:1.45;}
   .items .name{font-weight:800;text-transform:uppercase;padding-right:16px;}
-  .items .name a{color:inherit;text-decoration:underline;text-decoration-thickness:2px;
+  .items .name a{color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;
                  text-underline-offset:3px;}
   .items .name a::after{content:" ↗";font-weight:400;}
   .items .name a:hover{background:var(--ink);color:var(--paper);text-decoration:none;}
