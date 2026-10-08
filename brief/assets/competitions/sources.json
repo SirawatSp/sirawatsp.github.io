@@ -1,0 +1,77 @@
+{
+  "andreu-world": {
+    "source_page": "https://andreuworld.com/en/talent/design-contest",
+    "original_image": "https://andreuworld.com/media/wysiwyg/andreu_world_concurso1.jpg",
+    "credit": "Andreu World",
+    "retrieved_or_identified": "2026-10-09",
+    "status": "saved",
+    "file": "andreu-world.jpg",
+    "width": 723,
+    "height": 810
+  },
+  "kinderspace": {
+    "source_page": "https://architecturecompetitions.com/kinderspace4/",
+    "original_image": "https://storage.architecturecompetitions.com/upload/16.04.2026/636f8603c5196900c4a502fb655c939c.jpg",
+    "credit": "Buildner",
+    "retrieved_or_identified": "2026-10-09",
+    "status": "source-hosted"
+  },
+  "unbox": {
+    "source_page": "https://volumezerocompetitions.com/unbox-2026",
+    "original_image": "https://volumezerocompetitions.com/img/unbox-og.jpg",
+    "credit": "Volume Zero",
+    "retrieved_or_identified": "2026-10-09",
+    "status": "saved",
+    "file": "unbox.jpg",
+    "width": 1895,
+    "height": 809
+  },
+  "architects-chair": {
+    "source_page": "https://architecturecompetitions.com/architectschairstockholm",
+    "original_image": "https://storage.architecturecompetitions.com/upload/17.06.2026/d916d9c0a48a1c1a202f277a08d6d465.jpg",
+    "credit": "Buildner",
+    "retrieved_or_identified": "2026-10-09",
+    "status": "source-hosted"
+  },
+  "reform": {
+    "source_page": "https://www.designboom.com/competition/reform-new-life-for-old-spaces-edition-3/",
+    "original_image": "https://www.designboom.com/wp-content/uploads/2026/03/Re-Form-New-Life-for-Old-Spaces-Edition-3-designboom-1200.jpg",
+    "credit": "Buildner / designboom",
+    "retrieved_or_identified": "2026-10-09",
+    "status": "saved",
+    "file": "reform.jpg",
+    "width": 1200,
+    "height": 628
+  },
+  "pavilion-atlas": {
+    "source_page": "https://architecturecompetitions.com/pavilionatlas/",
+    "original_image": "https://storage.architecturecompetitions.com/upload/23.09.2025/323dffe2d02ac200ddb4cbe08c1439d8.jpg",
+    "credit": "Buildner",
+    "retrieved_or_identified": "2026-10-09",
+    "status": "source-hosted"
+  },
+  "underbridge": {
+    "source_page": "https://www.designboom.com/competition/underbridge-2/",
+    "original_image": "https://www.designboom.com/wp-content/uploads/2026/03/Underbridge-2-designboom-1200.jpg",
+    "credit": "Buildner / designboom",
+    "retrieved_or_identified": "2026-10-09",
+    "status": "saved",
+    "file": "underbridge.jpg",
+    "width": 1200,
+    "height": 628
+  },
+  "unbuilt": {
+    "source_page": "https://architecturecompetitions.com/unbuilt2026/",
+    "original_image": "https://storage.architecturecompetitions.com/upload/12.12.2025/dad870974bbd743f46455e3143a15463.jpg",
+    "credit": "Buildner",
+    "retrieved_or_identified": "2026-10-09",
+    "status": "source-hosted"
+  },
+  "microhome": {
+    "source_page": "https://architecturecompetitions.com/microhome2026/",
+    "original_image": "https://storage.architecturecompetitions.com/upload/05.11.2025/3c8a93f0c590b18fcf60cab75f083d3f.jpg",
+    "credit": "Buildner",
+    "retrieved_or_identified": "2026-10-09",
+    "status": "source-hosted"
+  }
+}
