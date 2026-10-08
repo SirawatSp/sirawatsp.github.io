@@ -1,0 +1,117 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Kingspan MICROHOME 2026 — S-STUDIO</title>
+<style>
+  /* Single dark visual world — no theme switching, so nothing can collapse
+     to black-on-black. Dark grey sheet, explicit light ink. */
+  :root{
+    color-scheme: dark;
+    --ground:#141414;   /* surround, darker than the sheet */
+    --paper:#2E2E2E;    /* the sheet itself — dark grey */
+    --ink:#F2F1EF;      /* primary text — 12.3:1 on the sheet */
+    --ink-2:#B5B5B3;    /* secondary text — 6.6:1 */
+    --rule:#F2F1EF;
+    --rule-soft:#565654;
+  }
+
+  body{margin:0;background:var(--ground);
+       font-family:"Helvetica Neue",Helvetica,"Noto Sans Thai",Arial,sans-serif;
+       -webkit-font-smoothing:antialiased;}
+  .sheet{max-width:820px;margin:48px auto;background:var(--paper);color:var(--ink);
+         padding:56px 56px 0;box-shadow:0 18px 60px rgba(0,0,0,.35);}
+  @media (max-width:640px){ .sheet{margin:0;padding:32px 20px 0;} }
+
+  /* masthead */
+  h1{font-size:clamp(44px,9.5vw,84px);font-weight:800;letter-spacing:-.035em;
+     line-height:.95;margin:0 0 8px;text-transform:uppercase;white-space:nowrap;}
+  .rule{border:0;border-top:2px solid var(--rule);margin:0;}
+  .rule-soft{border:0;border-top:1px solid var(--rule-soft);margin:0;}
+
+  /* meta row */
+  .meta{display:flex;flex-wrap:wrap;gap:6px 48px;padding:26px 0 30px;align-items:flex-start;}
+  .meta .col{font-size:12px;font-weight:700;line-height:1.5;text-transform:uppercase;}
+  .meta .col span{display:block;}
+  .meta .kind{margin-left:auto;font-size:clamp(26px,4.5vw,38px);font-weight:800;
+              letter-spacing:-.02em;line-height:1;}
+
+  /* section label */
+  .sec{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+       padding:10px 0 8px;color:var(--ink);}
+
+  /* line items */
+  table{width:100%;border-collapse:collapse;}
+  .items td{vertical-align:top;padding:9px 0 10px;font-size:12px;line-height:1.45;}
+  .items .name{font-weight:800;text-transform:uppercase;padding-right:16px;}
+  .items .name a{color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;
+                 text-underline-offset:3px;}
+  .items .name a::after{content:" ↗";font-weight:400;}
+  .items .name a:hover{background:var(--ink);color:var(--paper);text-decoration:none;}
+  .items .name a:focus-visible{outline:2px solid var(--ink);outline-offset:2px;}
+  .items .name .sub{display:block;font-weight:400;color:var(--ink-2);padding-left:26px;
+                    text-transform:uppercase;font-size:11px;}
+  .items .n{width:26px;font-weight:400;color:var(--ink-2);}
+  .items .num{text-align:right;white-space:nowrap;font-weight:400;padding-left:18px;
+              font-variant-numeric:tabular-nums;}
+  .items .due{text-align:right;white-space:nowrap;font-weight:800;padding-left:18px;
+              font-variant-numeric:tabular-nums;width:64px;}
+  .items tr{border-bottom:0;}
+  .wide{overflow-x:auto;}
+  .wide table{min-width:560px;}
+
+  /* totals */
+  .totals{display:flex;justify-content:flex-end;padding:34px 0 40px;}
+  .totals table{width:auto;min-width:300px;}
+  .totals td{font-size:12px;font-weight:800;text-transform:uppercase;padding:2px 0;}
+  .totals td:last-child{text-align:right;font-variant-numeric:tabular-nums;padding-left:64px;}
+  .totals .big td{font-size:14px;padding-top:8px;}
+
+  /* verdict / payment block */
+  .pay{padding:22px 0 26px;}
+  .pay .head{display:flex;flex-wrap:wrap;gap:4px 28px;align-items:baseline;}
+  .pay .word{font-size:clamp(24px,4vw,34px);font-weight:800;letter-spacing:-.02em;text-transform:uppercase;}
+  .pay .ref{font-size:11px;font-weight:700;text-transform:uppercase;line-height:1.5;}
+  .pay .grid{display:flex;flex-wrap:wrap;gap:24px 56px;padding-top:18px;}
+  .pay .box{font-size:11px;font-weight:700;text-transform:uppercase;line-height:1.7;}
+  .pay .box .lite{font-weight:400;color:var(--ink-2);}
+  .repo{display:inline-block;margin-top:10px;margin-right:10px;background:var(--ink);color:var(--paper);
+        text-decoration:none;font-size:11px;font-weight:800;letter-spacing:.06em;
+        padding:14px 18px;text-transform:uppercase;}
+  .repo:focus-visible{outline:2px solid var(--ink);outline-offset:3px;}
+
+  /* terms */
+  .terms{columns:2;column-gap:32px;font-size:8.5px;line-height:1.55;color:var(--ink-2);
+         padding:14px 0 26px;text-transform:uppercase;}
+  @media (max-width:640px){ .terms{columns:1;} }
+  .terms b{color:var(--ink);}
+  .terms .th{text-transform:none;}
+
+  /* footer strip */
+  .foot{display:flex;flex-wrap:wrap;gap:8px 40px;padding:12px 0 40px;
+        font-size:9px;font-weight:700;text-transform:uppercase;line-height:1.6;}
+  .foot span{display:block;}
+  /* Competition covers, retained in full with source credits. */
+  .cover-row td{padding:24px 0 6px;}
+  .competition-cover{margin:0;}
+  .competition-cover>a{display:block;background:var(--ground);}
+  .competition-cover img{display:block;width:100%;height:auto;max-height:440px;
+    object-fit:contain;background:var(--ground);}
+  .competition-cover figcaption{padding:8px 0;font-size:10px;line-height:1.5;
+    color:var(--ink-2);text-transform:none;}
+  .competition-cover figcaption a{color:var(--ink-2);text-underline-offset:3px;}
+  @media(max-width:640px){.cover-row td{padding-top:18px;}.competition-cover img{max-height:300px;}}
+
+
+  .detail{font-size:15px;line-height:1.7;padding-bottom:36px;}
+  .detail h2{font-size:22px;margin:32px 0 12px;}
+  .detail h3{font-size:16px;margin:24px 0 8px;}
+  .detail a{color:var(--ink);text-underline-offset:3px;}
+  .detail .facts th,.detail .facts td{padding:12px 0;vertical-align:top;text-align:left;border-bottom:1px solid var(--rule-soft);}
+  .detail .facts th{width:26%;padding-right:20px;font-size:12px;text-transform:uppercase;}
+  .detail .muted{font-size:12px;color:var(--ink-2);}
+  .detail .hero{width:100%;height:auto;max-height:440px;object-fit:contain;background:var(--ground);}
+  .detail .decision{padding:18px;border:1px solid var(--rule-soft);}
+  .detail li{margin:10px 0;}
+</style>
+
+<main class="sheet detail"><a href="/brief/">← Latest brief</a> · <a href="/brief/competitions/">All competition briefs</a><p class="sec">[Competition brief · 9 Oct 2026]</p><h2>Kingspan MICROHOME 2026</h2><img class="hero" src="https://storage.architecturecompetitions.com/upload/05.11.2025/3c8a93f0c590b18fcf60cab75f083d3f.jpg" alt="Source imagery for Kingspan MICROHOME 2026" onerror="this.hidden=true"><p class="muted">Image source: <a href="https://architecturecompetitions.com/microhome2026/">Buildner</a></p><p class="muted">Reviewed 9 October 2026 (Asia/Bangkok). Official public pages/FAQs were read; this is an initial decision brief, not a replacement for the full competition rules. Organiser facts and our design analysis are separated. Full Buildner downloadable briefs were not obtained: the pages offer an email request flow, which was not submitted.</p><h2>Official brief — at a glance</h2><p>Design a microhome within 25 m² that is efficient, comfortable and context-responsive. Sites may be anywhere; the theme asks how restraint, material honesty and adaptability can support responsible living.</p><table class="facts"><tr><th scope="row">Status</th><td>Registration closed; submission only if already registered</td></tr><tr><th scope="row">Registration</th><td>30 September 2026</td></tr><tr><th scope="row">Submission / results</th><td>2 November 2026, 23:59 London time; winners 15 December 2026</td></tr><tr><th scope="row">Fee / costs</th><td>Paid entry; exact historical professional tier not reverified.</td></tr><tr><th scope="row">Eligibility</th><td>Open to all backgrounds; no professional qualification required; English. Exact team limit not confirmed in the accessible introduction.</td></tr><tr><th scope="row">Prizes</th><td>€100,000 total: €30,000 / €10,000 / €5,000 main prizes; €10,000 student-only; €30,000 Kingspan Award; three €5,000 Kingspan compliments. Confirm sponsor-award conditions separately.</td></tr><tr><th scope="row">Deliverables</th><td>25 m² cap confirmed; exact area measurement, occupancy, off-grid requirements, sponsor-product rules and board/file requirements need the full brief. Do not import rules from another MICROHOME edition.</td></tr></table><h2>Our design reading</h2><p>The design test is comfort under a tight area budget. For a tropical scenario, explain shade, ventilation, privacy and storage without quietly moving required indoor functions outside the counted area.</p><h3>Useful first moves</h3><ul><li>Make an area schedule and draw furniture/clearances at human scale.</li><li>Use one section to explain ventilation, shading and roof/service strategy.</li><li>Distinguish a beautiful compact retreat from repeatable, affordable housing.</li></ul><h2>Fit and first decision</h2><p class="decision">High housing fit, but requires a new tightly resolved scheme and paid registration; this edition is closed to new entrants. If already registered, prioritise compliance and spatial completeness.</p><h2>Still to verify / risks</h2><ul><li>Full brief is required for Kingspan Award eligibility and product conditions.</li><li>Buildner Medal publicity on the page is a separate invitation-only award; it is not part of the €100,000 MICROHOME prize fund.</li></ul><h2>Sources</h2><ul><li><a href="https://architecturecompetitions.com/microhome2026/" target="_blank" rel="noopener">https://architecturecompetitions.com/microhome2026/</a></li></ul><h2>สรุป</h2><p lang="th">บ้าน 25 ตร.ม. ต้องเล็กแต่ใช้ชีวิตได้จริง ทั้งเก็บของ ความเป็นส่วนตัว และสภาพอากาศ เหมาะกับสาย housing แต่สมัครปิดแล้ว เงื่อนไขพื้นที่และรางวัล Kingspan ต้องอ่านจาก brief เต็ม</p></main>

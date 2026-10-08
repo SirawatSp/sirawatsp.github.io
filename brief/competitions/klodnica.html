@@ -1,0 +1,117 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Kłodnica Boulevards — Gliwice urban design competition — S-STUDIO</title>
+<style>
+  /* Single dark visual world — no theme switching, so nothing can collapse
+     to black-on-black. Dark grey sheet, explicit light ink. */
+  :root{
+    color-scheme: dark;
+    --ground:#141414;   /* surround, darker than the sheet */
+    --paper:#2E2E2E;    /* the sheet itself — dark grey */
+    --ink:#F2F1EF;      /* primary text — 12.3:1 on the sheet */
+    --ink-2:#B5B5B3;    /* secondary text — 6.6:1 */
+    --rule:#F2F1EF;
+    --rule-soft:#565654;
+  }
+
+  body{margin:0;background:var(--ground);
+       font-family:"Helvetica Neue",Helvetica,"Noto Sans Thai",Arial,sans-serif;
+       -webkit-font-smoothing:antialiased;}
+  .sheet{max-width:820px;margin:48px auto;background:var(--paper);color:var(--ink);
+         padding:56px 56px 0;box-shadow:0 18px 60px rgba(0,0,0,.35);}
+  @media (max-width:640px){ .sheet{margin:0;padding:32px 20px 0;} }
+
+  /* masthead */
+  h1{font-size:clamp(44px,9.5vw,84px);font-weight:800;letter-spacing:-.035em;
+     line-height:.95;margin:0 0 8px;text-transform:uppercase;white-space:nowrap;}
+  .rule{border:0;border-top:2px solid var(--rule);margin:0;}
+  .rule-soft{border:0;border-top:1px solid var(--rule-soft);margin:0;}
+
+  /* meta row */
+  .meta{display:flex;flex-wrap:wrap;gap:6px 48px;padding:26px 0 30px;align-items:flex-start;}
+  .meta .col{font-size:12px;font-weight:700;line-height:1.5;text-transform:uppercase;}
+  .meta .col span{display:block;}
+  .meta .kind{margin-left:auto;font-size:clamp(26px,4.5vw,38px);font-weight:800;
+              letter-spacing:-.02em;line-height:1;}
+
+  /* section label */
+  .sec{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+       padding:10px 0 8px;color:var(--ink);}
+
+  /* line items */
+  table{width:100%;border-collapse:collapse;}
+  .items td{vertical-align:top;padding:9px 0 10px;font-size:12px;line-height:1.45;}
+  .items .name{font-weight:800;text-transform:uppercase;padding-right:16px;}
+  .items .name a{color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;
+                 text-underline-offset:3px;}
+  .items .name a::after{content:" ↗";font-weight:400;}
+  .items .name a:hover{background:var(--ink);color:var(--paper);text-decoration:none;}
+  .items .name a:focus-visible{outline:2px solid var(--ink);outline-offset:2px;}
+  .items .name .sub{display:block;font-weight:400;color:var(--ink-2);padding-left:26px;
+                    text-transform:uppercase;font-size:11px;}
+  .items .n{width:26px;font-weight:400;color:var(--ink-2);}
+  .items .num{text-align:right;white-space:nowrap;font-weight:400;padding-left:18px;
+              font-variant-numeric:tabular-nums;}
+  .items .due{text-align:right;white-space:nowrap;font-weight:800;padding-left:18px;
+              font-variant-numeric:tabular-nums;width:64px;}
+  .items tr{border-bottom:0;}
+  .wide{overflow-x:auto;}
+  .wide table{min-width:560px;}
+
+  /* totals */
+  .totals{display:flex;justify-content:flex-end;padding:34px 0 40px;}
+  .totals table{width:auto;min-width:300px;}
+  .totals td{font-size:12px;font-weight:800;text-transform:uppercase;padding:2px 0;}
+  .totals td:last-child{text-align:right;font-variant-numeric:tabular-nums;padding-left:64px;}
+  .totals .big td{font-size:14px;padding-top:8px;}
+
+  /* verdict / payment block */
+  .pay{padding:22px 0 26px;}
+  .pay .head{display:flex;flex-wrap:wrap;gap:4px 28px;align-items:baseline;}
+  .pay .word{font-size:clamp(24px,4vw,34px);font-weight:800;letter-spacing:-.02em;text-transform:uppercase;}
+  .pay .ref{font-size:11px;font-weight:700;text-transform:uppercase;line-height:1.5;}
+  .pay .grid{display:flex;flex-wrap:wrap;gap:24px 56px;padding-top:18px;}
+  .pay .box{font-size:11px;font-weight:700;text-transform:uppercase;line-height:1.7;}
+  .pay .box .lite{font-weight:400;color:var(--ink-2);}
+  .repo{display:inline-block;margin-top:10px;margin-right:10px;background:var(--ink);color:var(--paper);
+        text-decoration:none;font-size:11px;font-weight:800;letter-spacing:.06em;
+        padding:14px 18px;text-transform:uppercase;}
+  .repo:focus-visible{outline:2px solid var(--ink);outline-offset:3px;}
+
+  /* terms */
+  .terms{columns:2;column-gap:32px;font-size:8.5px;line-height:1.55;color:var(--ink-2);
+         padding:14px 0 26px;text-transform:uppercase;}
+  @media (max-width:640px){ .terms{columns:1;} }
+  .terms b{color:var(--ink);}
+  .terms .th{text-transform:none;}
+
+  /* footer strip */
+  .foot{display:flex;flex-wrap:wrap;gap:8px 40px;padding:12px 0 40px;
+        font-size:9px;font-weight:700;text-transform:uppercase;line-height:1.6;}
+  .foot span{display:block;}
+  /* Competition covers, retained in full with source credits. */
+  .cover-row td{padding:24px 0 6px;}
+  .competition-cover{margin:0;}
+  .competition-cover>a{display:block;background:var(--ground);}
+  .competition-cover img{display:block;width:100%;height:auto;max-height:440px;
+    object-fit:contain;background:var(--ground);}
+  .competition-cover figcaption{padding:8px 0;font-size:10px;line-height:1.5;
+    color:var(--ink-2);text-transform:none;}
+  .competition-cover figcaption a{color:var(--ink-2);text-underline-offset:3px;}
+  @media(max-width:640px){.cover-row td{padding-top:18px;}.competition-cover img{max-height:300px;}}
+
+
+  .detail{font-size:15px;line-height:1.7;padding-bottom:36px;}
+  .detail h2{font-size:22px;margin:32px 0 12px;}
+  .detail h3{font-size:16px;margin:24px 0 8px;}
+  .detail a{color:var(--ink);text-underline-offset:3px;}
+  .detail .facts th,.detail .facts td{padding:12px 0;vertical-align:top;text-align:left;border-bottom:1px solid var(--rule-soft);}
+  .detail .facts th{width:26%;padding-right:20px;font-size:12px;text-transform:uppercase;}
+  .detail .muted{font-size:12px;color:var(--ink-2);}
+  .detail .hero{width:100%;height:auto;max-height:440px;object-fit:contain;background:var(--ground);}
+  .detail .decision{padding:18px;border:1px solid var(--rule-soft);}
+  .detail li{margin:10px 0;}
+</style>
+
+<main class="sheet detail"><a href="/brief/">← Latest brief</a> · <a href="/brief/competitions/">All competition briefs</a><h2>Kłodnica Boulevards — Gliwice urban design competition</h2><p class="muted">Discovery lead · 9 October 2026 · Free entry reported by ArchDaily; organiser eligibility unverified.</p><img class="hero" src="https://images.adsttc.com/media/images/6ab2/7fc6/325b/9100/01c4/5f96/large_jpg/GRFIKA_BULWARY_K_ODNICY_2.jpg?1790083047" alt="Kłodnica Boulevards competition illustration from ArchDaily" onerror="this.hidden=true"><p class="muted">Illustration source: <a href="https://www.archdaily.com/1185568/open-call-urban-design-competition-for-the-klodnica-boulevards-in-gliwice">City of Gliwice / ArchDaily</a></p><h2>Source status</h2><p>ArchDaily announcement read 9 October 2026. It reports free entry and a 12 November 2026, 16:00 submission deadline. Organiser rules could not be fetched through the current network policy; timezone and any separate registration deadline remain unverified.</p><h2>Design problem</h2><p>Develop an urban-planning, landscape and architectural concept for the Kłodnica River valley in Gliwice. The city seeks a multifunctional riverside public space, connected green systems, safe walking/cycling routes and climate resilience. This is a city-scale river corridor study, rather than a small building.</p><h2>Eligibility and fee</h2><p>ArchDaily lists Price: Free. Whether a Thai-based architect can enter, required professional credentials, team structure, language and appointment conditions are not established by the announcement. Do not describe it as confirmed eligible or zero-cost.</p><h2>Prizes and deliverables</h2><p>Prize money, drawing scale, board/file format, registration process and rights/commission terms are unverified. Obtain the official regulations and site materials before preparing a design.</p><h2>Our design reading</h2><p>The key task is to organise a continuous landscape and movement system while respecting flood behaviour, habitat and adjacent neighbourhoods. A strong concept demonstrates how public access and ecological repair coexist instead of treating the river only as a promenade backdrop.</p><h2>Useful first moves</h2><p>First resolve international eligibility and deadlines. Then map floodplain/ecological constraints, bridges and street access; develop a corridor framework before individual public-space details. Treat travel, translation, local-team input and possible professional appointment obligations as separate potential costs.</p><h2>Fit and first decision</h2><p>Promising free-entry architecture/landscape lead, but large scope and a Polish site make it less immediate than a Phuket project. Verification first; do not start design or assume you can enter based solely on the Free label.</p><h2>สรุป</h2><p>ArchDaily ระบุว่าประกวดพื้นที่ริมน้ำ Kłodnica ที่โปแลนด์สมัครฟรี ส่ง 12 พ.ย. เวลา 16:00 แต่ยังเช็คกติกาผู้จัดไม่ได้ ต้องยืนยันว่าคนทำงานในไทยสมัครได้ ภาษาและสิ่งที่ต้องส่งคืออะไร ก่อนเริ่มออกแบบ</p><h2>Sources</h2><ul><li><a href="https://www.archdaily.com/1185568/open-call-urban-design-competition-for-the-klodnica-boulevards-in-gliwice" target="_blank" rel="noopener">https://www.archdaily.com/1185568/open-call-urban-design-competition-for-the-klodnica-boulevards-in-gliwice</a></li><li><a href="https://msip.gliwice.eu/biuro-urbanisty-miasta-konkurs-bulwary-klodnicy" target="_blank" rel="noopener">https://msip.gliwice.eu/biuro-urbanisty-miasta-konkurs-bulwary-klodnicy</a></li></ul></main>

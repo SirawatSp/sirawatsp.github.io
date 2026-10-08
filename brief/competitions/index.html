@@ -1,0 +1,117 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Competition briefs — S-STUDIO</title>
+<style>
+  /* Single dark visual world — no theme switching, so nothing can collapse
+     to black-on-black. Dark grey sheet, explicit light ink. */
+  :root{
+    color-scheme: dark;
+    --ground:#141414;   /* surround, darker than the sheet */
+    --paper:#2E2E2E;    /* the sheet itself — dark grey */
+    --ink:#F2F1EF;      /* primary text — 12.3:1 on the sheet */
+    --ink-2:#B5B5B3;    /* secondary text — 6.6:1 */
+    --rule:#F2F1EF;
+    --rule-soft:#565654;
+  }
+
+  body{margin:0;background:var(--ground);
+       font-family:"Helvetica Neue",Helvetica,"Noto Sans Thai",Arial,sans-serif;
+       -webkit-font-smoothing:antialiased;}
+  .sheet{max-width:820px;margin:48px auto;background:var(--paper);color:var(--ink);
+         padding:56px 56px 0;box-shadow:0 18px 60px rgba(0,0,0,.35);}
+  @media (max-width:640px){ .sheet{margin:0;padding:32px 20px 0;} }
+
+  /* masthead */
+  h1{font-size:clamp(44px,9.5vw,84px);font-weight:800;letter-spacing:-.035em;
+     line-height:.95;margin:0 0 8px;text-transform:uppercase;white-space:nowrap;}
+  .rule{border:0;border-top:2px solid var(--rule);margin:0;}
+  .rule-soft{border:0;border-top:1px solid var(--rule-soft);margin:0;}
+
+  /* meta row */
+  .meta{display:flex;flex-wrap:wrap;gap:6px 48px;padding:26px 0 30px;align-items:flex-start;}
+  .meta .col{font-size:12px;font-weight:700;line-height:1.5;text-transform:uppercase;}
+  .meta .col span{display:block;}
+  .meta .kind{margin-left:auto;font-size:clamp(26px,4.5vw,38px);font-weight:800;
+              letter-spacing:-.02em;line-height:1;}
+
+  /* section label */
+  .sec{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+       padding:10px 0 8px;color:var(--ink);}
+
+  /* line items */
+  table{width:100%;border-collapse:collapse;}
+  .items td{vertical-align:top;padding:9px 0 10px;font-size:12px;line-height:1.45;}
+  .items .name{font-weight:800;text-transform:uppercase;padding-right:16px;}
+  .items .name a{color:var(--ink);text-decoration:underline;text-decoration-thickness:2px;
+                 text-underline-offset:3px;}
+  .items .name a::after{content:" ↗";font-weight:400;}
+  .items .name a:hover{background:var(--ink);color:var(--paper);text-decoration:none;}
+  .items .name a:focus-visible{outline:2px solid var(--ink);outline-offset:2px;}
+  .items .name .sub{display:block;font-weight:400;color:var(--ink-2);padding-left:26px;
+                    text-transform:uppercase;font-size:11px;}
+  .items .n{width:26px;font-weight:400;color:var(--ink-2);}
+  .items .num{text-align:right;white-space:nowrap;font-weight:400;padding-left:18px;
+              font-variant-numeric:tabular-nums;}
+  .items .due{text-align:right;white-space:nowrap;font-weight:800;padding-left:18px;
+              font-variant-numeric:tabular-nums;width:64px;}
+  .items tr{border-bottom:0;}
+  .wide{overflow-x:auto;}
+  .wide table{min-width:560px;}
+
+  /* totals */
+  .totals{display:flex;justify-content:flex-end;padding:34px 0 40px;}
+  .totals table{width:auto;min-width:300px;}
+  .totals td{font-size:12px;font-weight:800;text-transform:uppercase;padding:2px 0;}
+  .totals td:last-child{text-align:right;font-variant-numeric:tabular-nums;padding-left:64px;}
+  .totals .big td{font-size:14px;padding-top:8px;}
+
+  /* verdict / payment block */
+  .pay{padding:22px 0 26px;}
+  .pay .head{display:flex;flex-wrap:wrap;gap:4px 28px;align-items:baseline;}
+  .pay .word{font-size:clamp(24px,4vw,34px);font-weight:800;letter-spacing:-.02em;text-transform:uppercase;}
+  .pay .ref{font-size:11px;font-weight:700;text-transform:uppercase;line-height:1.5;}
+  .pay .grid{display:flex;flex-wrap:wrap;gap:24px 56px;padding-top:18px;}
+  .pay .box{font-size:11px;font-weight:700;text-transform:uppercase;line-height:1.7;}
+  .pay .box .lite{font-weight:400;color:var(--ink-2);}
+  .repo{display:inline-block;margin-top:10px;margin-right:10px;background:var(--ink);color:var(--paper);
+        text-decoration:none;font-size:11px;font-weight:800;letter-spacing:.06em;
+        padding:14px 18px;text-transform:uppercase;}
+  .repo:focus-visible{outline:2px solid var(--ink);outline-offset:3px;}
+
+  /* terms */
+  .terms{columns:2;column-gap:32px;font-size:8.5px;line-height:1.55;color:var(--ink-2);
+         padding:14px 0 26px;text-transform:uppercase;}
+  @media (max-width:640px){ .terms{columns:1;} }
+  .terms b{color:var(--ink);}
+  .terms .th{text-transform:none;}
+
+  /* footer strip */
+  .foot{display:flex;flex-wrap:wrap;gap:8px 40px;padding:12px 0 40px;
+        font-size:9px;font-weight:700;text-transform:uppercase;line-height:1.6;}
+  .foot span{display:block;}
+  /* Competition covers, retained in full with source credits. */
+  .cover-row td{padding:24px 0 6px;}
+  .competition-cover{margin:0;}
+  .competition-cover>a{display:block;background:var(--ground);}
+  .competition-cover img{display:block;width:100%;height:auto;max-height:440px;
+    object-fit:contain;background:var(--ground);}
+  .competition-cover figcaption{padding:8px 0;font-size:10px;line-height:1.5;
+    color:var(--ink-2);text-transform:none;}
+  .competition-cover figcaption a{color:var(--ink-2);text-underline-offset:3px;}
+  @media(max-width:640px){.cover-row td{padding-top:18px;}.competition-cover img{max-height:300px;}}
+
+
+  .detail{font-size:15px;line-height:1.7;padding-bottom:36px;}
+  .detail h2{font-size:22px;margin:32px 0 12px;}
+  .detail h3{font-size:16px;margin:24px 0 8px;}
+  .detail a{color:var(--ink);text-underline-offset:3px;}
+  .detail .facts th,.detail .facts td{padding:12px 0;vertical-align:top;text-align:left;border-bottom:1px solid var(--rule-soft);}
+  .detail .facts th{width:26%;padding-right:20px;font-size:12px;text-transform:uppercase;}
+  .detail .muted{font-size:12px;color:var(--ink-2);}
+  .detail .hero{width:100%;height:auto;max-height:440px;object-fit:contain;background:var(--ground);}
+  .detail .decision{padding:18px;border:1px solid var(--rule-soft);}
+  .detail li{margin:10px 0;}
+</style>
+
+<main class="sheet detail"><a href="/brief/">← Latest brief</a><h2>Every competition, its own brief</h2><p>9 October 2026 · Professional-entry focus · Facts, design reading and a first decision for all nine competitions in issue 007.</p><p>Three paid registration dates remain ahead. Six entries have passed their entry or registration deadline. No currently open free entry is established by these nine.</p><ul><li><a href="andreu-world.html">Andreu World — Manufacturing the Future 2026</a><br><span class="muted">2026 entry deadline passed</span></li><li><a href="kinderspace.html">Kinderspace #4 — Architecture for Children’s Development</a><br><span class="muted">Registration date still ahead; paid</span></li><li><a href="unbox.html">The Unbox 2026 — Micro Public Architecture</a><br><span class="muted">Registration date still ahead; paid</span></li><li><a href="architects-chair.html">The Architect’s Chair — Stockholm Edition #6</a><br><span class="muted">Registration date still ahead; paid</span></li><li><a href="reform.html">Re:Form #3 — New Life for Old Spaces</a><br><span class="muted">Registration closed; submission only if already registered</span></li><li><a href="pavilion-atlas.html">Pavilion Atlas 2026</a><br><span class="muted">Registration closed; submission only if already registered</span></li><li><a href="underbridge.html">Underbridge #2 — Housing Beneath Infrastructure</a><br><span class="muted">Registration closed; submission only if already registered</span></li><li><a href="unbuilt.html">Buildner Unbuilt Award 2026</a><br><span class="muted">Registration explicitly closed; submission only if already registered</span></li><li><a href="microhome.html">Kingspan MICROHOME 2026</a><br><span class="muted">Registration closed; submission only if already registered</span></li></ul><h2>New from ArchDaily — verify first</h2><p><a href="klodnica.html">Kłodnica Boulevards, Gliwice →</a><br>ArchDaily lists free entry and 12 November submission; international eligibility and organiser rules remain unverified.</p><p><a href="https://www.archdaily.com/search/competitions">Browse ArchDaily competitions →</a></p></main>
